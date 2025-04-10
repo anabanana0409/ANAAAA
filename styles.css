@@ -1,0 +1,282 @@
+:root {
+    --cor-primaria: #2c3e50;
+    --cor-secundaria: #e9ecef;
+    --cor-destaque: #3498db;
+    --cor-texto: #333;
+    --cor-fundo: #fff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+/* Seções */
+.secao-Festa-do-Divino {
+    background-color: var(--cor-secundaria);
+    padding: 50px 0;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+.fundo-galeria {
+    background-color: var(--cor-secundaria);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.inicio-fundo {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://upload.wikimedia.org/wikipedia/commons/9/9f/20.05.2018_Cairu_Boipeba_Festa_do_Divino_Esp%C3%ADrito_Santo_%2842264178461%29.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    color: white;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.pt-6 {
+    padding-top: 4rem;
+}
+
+/* Botões */
+.botao-inicio {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: var(--cor-destaque);
+    border: none;
+    padding: 12px 25px;
+    animation: pulse 2s infinite;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.botao-inicio:hover {
+    transform: scale(1.05);
+    background-color: #2980b9;
+    animation: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagens */
+.img-inicio {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid white;
+}
+
+.img-inicio:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.galeria-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border: 2px solid transparent;
+}
+
+.galeria-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-color: var(--cor-destaque);
+}
+
+/* Tipografia */
+.display-4 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.display-5 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--cor-primaria);
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+/* Animações */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.img-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Acessibilidade */
+.menu-acessibilidade {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.opcoes-acessibilidade {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+.mostrar-opcoes {
+    display: flex !important;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.rotacao-botao {
+    transition: transform 0.3s ease;
+}
+
+.rotacao-botao:hover {
+    transform: rotate(5deg);
+}
+
+/* Alto Contraste */
+.alto-contraste {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.alto-contraste a {
+    color: #ffbf47 !important;
+}
+
+.alto-contraste button {
+    background-color: #ffbf47 !important;
+    color: #000 !important;
+    border: 2px solid #fff !important;
+}
+
+.alto-contraste img {
+    filter: grayscale(100%) contrast(200%);
+}
+
+.alto-contraste .secao-Festa-do-Divino,
+.alto-contraste .fundo-galeria {
+    background-color: #333 !important;
+    border: 2px solid #ffbf47 !important;
+}
+
+/* Efeito Ripple */
+.ripple {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, var(--cor-primaria), #1a252f);
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .inicio-fundo {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+    }
+    
+    .img-inicio {
+        margin-top: 30px;
+        max-width: 100%;
+    }
+    
+    .secao-Festa-do-Divino > .container {
+        flex-direction: column;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .inicio-fundo {
+        padding: 40px 15px;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .botao-inicio {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
